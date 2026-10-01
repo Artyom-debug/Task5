@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using System.Security.Cryptography;
 using Task5.Dtos;
 using Task5.Models;
 using Task5.Services;
@@ -12,6 +13,11 @@ namespace Task5.Controllers;
 public sealed class MovieController : ControllerBase
 {
     private static readonly TimeSpan MovieCacheLifetime = TimeSpan.FromHours(4);
+    private static readonly ulong DefaultSeed = SeedGenerator.GenerateUserSeed();
+
+    [HttpGet("seed")]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public ActionResult<string> GetDefaultSeed() => Ok(DefaultSeed.ToString(System.Globalization.CultureInfo.InvariantCulture));
 
     private readonly TextGenerator _textGenerator;
     private readonly TrailerGenerator _trailerGenerator;
@@ -25,13 +31,14 @@ public sealed class MovieController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<IReadOnlyList<MovieBaseInfo>> GetMovies([FromQuery] Page query, [FromQuery] ulong seed, [FromQuery] string locale)
+    public ActionResult<IReadOnlyList<MovieBaseInfo>> GetMovies([FromQuery] Page query, [FromQuery] ulong? seed, [FromQuery] string locale)
     {
         if (query.PageNumber < 1 || query.PageSize < 1)
             return BadRequest("PageNumber and PageSize must be positive.");
 
         if (!IsSupportedLocale(locale))
             return BadRequest("Supported locales: en, en-US, ru, ru-RU.");
+
 
         var lastIndex = (long)query.PageNumber * query.PageSize;
         if (lastIndex > int.MaxValue)
@@ -43,7 +50,7 @@ public sealed class MovieController : ControllerBase
         for (var offset = 0; offset < query.PageSize; offset++)
         {
             var index = (int)(firstIndex + offset);
-            var movieSeed = SeedGenerator.GenerateMovieSeed(seed, locale, index);
+            var movieSeed = SeedGenerator.GenerateMovieSeed(seed ?? DefaultSeed, locale, index);
             movies.Add(_textGenerator.GenerateShortMovieInformation(locale, movieSeed, index));
         }
 

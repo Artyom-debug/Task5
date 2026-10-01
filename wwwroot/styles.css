@@ -5,6 +5,10 @@ main { max-width: 1400px; margin: auto; }
 .toolbar { display: flex; align-items: center; gap: 22px; padding: 12px 16px; background: #f8f9fb; border-bottom: 1px solid #e0e3e8; }
 .field { display: flex; flex-direction: column; width: 132px; padding: 6px 10px; border: 1px solid #dfe2e7; border-radius: 4px; background: white; color: #69717b; font-size: 11px; gap: 3px; }
 .seed-field { width: 210px; }
+.seed-controls { display: flex; align-items: center; gap: 6px; }
+.seed-controls input { flex: 1; }
+#random-seed { flex: 0 0 32px; height: 32px; padding: 0; border: 1px solid #b8ccbd; border-radius: 4px; background: #edf2ec; color: #355b46; font-size: 22px; line-height: 1; }
+#random-seed:hover { background: #dce8dc; }
 input { font: inherit; color: #24272c; min-width: 0; }
 .field input { width: 100%; padding: 0; border: 0; background: transparent; font-size: 13px; outline: none; }
 .field:focus-within { border-color: #3876ed; box-shadow: 0 0 0 2px #3876ed20; }
@@ -64,7 +68,7 @@ h1 { margin: 0; font-size: 25px; letter-spacing: -.7px; font-weight: 600; }
 .page-heading > span { color: #879087; font-size: 12px; }
 .toolbar { gap: 16px; padding: 0 0 22px; background: transparent; border: 0; align-items: stretch; }
 .field { width: 145px; border-radius: 7px; border-color: #dce1db; padding: 8px 11px; }
-.seed-field { width: 210px; }
+.seed-field { width: 280px; }
 .field select { width: 100%; border: 0; outline: 0; background: transparent; font: inherit; font-size: 13px; color: #29352f; padding: 0; }
 .likes-field { justify-content: center; }
 input[type="range"] { accent-color: #477461; }

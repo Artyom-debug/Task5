@@ -2,8 +2,9 @@
 
 const translations = {
   'en-US': {
+    randomSeedShort: 'Random',
     movies: 'Movies', subtitle: 'Catalog generator', locale: 'Language / region',
-    seed: 'Seed', likes: 'Likes', reviews: 'Reviews', view: 'View',
+    seed: 'Seed', randomSeed: 'Generate a random seed', likes: 'Likes', reviews: 'Reviews', view: 'View',
     english: 'English (USA)', russian: 'Russian (Russia)', table: 'Table', gallery: 'Gallery',
     number: '#', genre: 'Genre', title: 'Title', actors: 'Cast', year: 'Year',
     previous: '← Previous', next: 'Next →', page: 'Page', parameters: 'Generation settings',
@@ -20,8 +21,9 @@ const translations = {
     detailsLink: 'Details and trailer ↗', updating: 'Updating…'
   },
   'ru-RU': {
+    randomSeedShort: 'Случайный',
     movies: 'Фильмы', subtitle: 'Генератор каталога', locale: 'Язык / регион',
-    seed: 'Сид', likes: 'Лайки', reviews: 'Ревью', view: 'Вид',
+    seed: 'Сид', randomSeed: 'Сгенерировать случайный сид', likes: 'Лайки', reviews: 'Ревью', view: 'Вид',
     english: 'Английский (США)', russian: 'Русский (Россия)', table: 'Таблица', gallery: 'Галерея',
     number: '№', genre: 'Жанр', title: 'Название', actors: 'Актёры', year: 'Год',
     previous: '← Назад', next: 'Далее →', page: 'Страница', parameters: 'Параметры генерации',

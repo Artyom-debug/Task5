@@ -21,6 +21,15 @@ let timer;
 let listController;
 let selected;
 
+function randomSeed() {
+  const words = crypto.getRandomValues(new Uint32Array(2));
+  return ((BigInt(words[0]) << 32n) | BigInt(words[1])).toString();
+}
+
+// Keep explicit seeds (including zero) as strings to preserve all 64 bits.
+const initialSeed = new URLSearchParams(window.location.search).get('seed');
+seed.value = initialSeed ?? '';
+
 function t(key) {
   return translations[locale.value][key];
 }
@@ -246,10 +255,29 @@ function parametersChanged() {
 }
 
 for (const input of [seed, likes, reviews, locale]) input.addEventListener('input', parametersChanged);
+document.querySelector('#random-seed').addEventListener('click', () => {
+  seed.value = randomSeed();
+  parametersChanged();
+});
 view.addEventListener('change', () => reset());
 previous.addEventListener('click', () => reset(page - 1));
 next.addEventListener('click', () => reset(page + 1));
 new IntersectionObserver(entries => {
   if (view.value === 'gallery' && entries.some(entry => entry.isIntersecting)) loadPage();
 }, { rootMargin: '200px' }).observe(sentinel);
-reset();
+async function initialize() {
+  localize();
+  if (initialSeed === null || initialSeed.trim() === '') {
+    try {
+      const response = await fetch('/api/movies/seed', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const defaultSeed = await response.text();
+      // Do not overwrite a value entered while the request was pending.
+      if (!seed.value.trim()) seed.value = defaultSeed.replace(/^"|"$/g, '');
+    } catch {
+      if (!seed.value.trim()) seed.value = randomSeed();
+    }
+  }
+  reset();
+}
+initialize();

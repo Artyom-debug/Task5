@@ -1,180 +1,346 @@
 {
-  "version": 1,
+  "version": 2,
   "locale": "en",
-  "openings": [
-    "A sudden event changes the characters' plans in {title}.",
-    "An unexpected encounter disrupts ordinary life in {title}.",
-    "The story of {title} begins with a difficult choice.",
-    "In {title}, a group of people faces a new challenge.",
-    "{title} follows the consequences of one surprising decision.",
-    "The characters' settled lives begin to shift in {title}.",
-    "{title} opens with a question that has no easy answer.",
-    "In {title}, a chance event sets a chain of changes in motion."
-  ],
-  "closings": [
-    "As events unfold, the characters must decide what matters most to them.",
-    "The further the story goes, the harder it becomes to return to old routines.",
-    "Each character's choices gradually change the course of events.",
-    "Different views of the same events lead to unexpected decisions.",
-    "Small decisions have consequences no one initially expected.",
-    "Behind the events lies a story about trust and responsibility.",
-    "The characters must decide what to protect and what to let go.",
-    "By the end of the journey, their first assumptions no longer seem certain."
-  ],
+  "openings": {
+    "subjects": [
+      "In \"{title}\", a chance encounter",
+      "In \"{title}\", an unexpected letter",
+      "In \"{title}\", a difficult decision",
+      "In \"{title}\", a strange coincidence",
+      "In \"{title}\", an old secret"
+    ],
+    "predicates": [
+      "changes the characters' plans",
+      "disrupts their ordinary lives",
+      "opens the way to new challenges",
+      "forces the characters to make a hard choice",
+      "casts the past in a different light"
+    ],
+    "endings": [
+      ", pushing them to work together",
+      "and gradually reveals a hidden conflict",
+      "and connects the lives of strangers",
+      "and rules out an easy way back",
+      "and gives ordinary events a new meaning"
+    ]
+  },
+  "closings": {
+    "subjects": [
+      "The final choice",
+      "The resolution",
+      "The end of this journey",
+      "The last turn",
+      "The characters' decision"
+    ],
+    "predicates": [
+      "returns the story to its central question",
+      "reveals the cost of earlier actions",
+      "changes how the events appear",
+      "brings the important details into focus",
+      "leaves room for thought"
+    ],
+    "endings": [
+      ", ending the journey without easy answers",
+      "and shows why trust matters",
+      "and calls the beginning back to mind",
+      "and gives the earlier trials more meaning",
+      "and opens a new perspective for the characters"
+    ]
+  },
   "genres": {
     "Action": {
-      "premises": [
-        "After a risky assignment, the characters discover that danger is closer than expected.",
-        "An unexpected attack forces the characters to abandon their plans and work together.",
-        "When an important meeting goes wrong, they must find a way out on their own.",
-        "A chance discovery draws the characters into a struggle with a powerful opponent.",
-        "After an ally disappears, the characters set out in search of answers.",
-        "A simple errand turns into a dangerous pursuit.",
-        "A new threat forces the characters to move faster than they are used to.",
-        "One mistake exposes an opponent's plan and leaves the characters with a choice."
-      ],
-      "stakes": [
-        "Every delay gives the opposition time to make another move.",
-        "To escape the trap, the characters must learn to trust one another.",
-        "The cost of a wrong move keeps rising.",
-        "The direct route proves more dangerous than a detour.",
-        "They must protect people close to them while searching for the truth.",
-        "Their opponent knows their weaknesses and uses that advantage.",
-        "Even a successful plan can create a new danger.",
-        "Victory depends on changing tactics as much as finding courage."
-      ]
+      "premises": {
+        "subjects": [
+          "The disappearance of an ally",
+          "An unexpected attack",
+          "A risky assignment",
+          "A chance discovery"
+        ],
+        "predicates": [
+          "draws the characters into a dangerous conflict",
+          "breaks apart a carefully made plan",
+          "points toward a powerful opponent",
+          "forces the team to act without support"
+        ],
+        "endings": [
+          "and leaves little time to prepare",
+          "and exposes a hidden threat",
+          "and changes the rules of the game",
+          "and tests their trust in one another"
+        ]
+      },
+      "stakes": {
+        "subjects": [
+          "Every delay",
+          "The opponent's next move",
+          "A hasty decision",
+          "An open confrontation"
+        ],
+        "predicates": [
+          "raises the price of a mistake",
+          "puts their friends in danger",
+          "narrows the path to victory",
+          "changes the balance of power"
+        ],
+        "endings": [
+          "and forces them to find another route",
+          "and makes them rethink their tactics",
+          "and brings the decisive moment closer",
+          "and makes mutual trust essential"
+        ]
+      }
     },
     "Sci-Fi": {
-      "premises": [
-        "An unusual discovery challenges everything the characters thought they knew.",
-        "A mysterious signal brings them face to face with an unexplained phenomenon.",
-        "A new experiment promises change, but its consequences are unknown.",
-        "A chance encounter reveals a side of reality they never imagined.",
-        "A scientific finding raises a question no one is prepared to answer.",
-        "The characters discover a technology capable of changing ordinary life.",
-        "An unfamiliar place tests both their knowledge and resolve.",
-        "An ordinary observation becomes evidence of the impossible."
-      ],
-      "stakes": [
-        "The more they learn, the harder it is to predict the results of their choices.",
-        "Time to test their ideas is running out.",
-        "The new possibility attracts people willing to use it for harm.",
-        "They must distinguish a genuine opportunity from a dangerous illusion.",
-        "Every answer raises further questions about the future.",
-        "Correcting a mistake may prove harder than making the discovery.",
-        "The familiar rules no longer help them decide what to do.",
-        "Their choices determine who will control the new knowledge."
-      ]
+      "premises": {
+        "subjects": [
+          "A mysterious signal",
+          "An unusual discovery",
+          "A new experiment",
+          "An unfamiliar technology"
+        ],
+        "predicates": [
+          "changes how the characters see the world",
+          "opens a possibility no one is ready for",
+          "calls familiar rules into question",
+          "reveals an unexpected side of reality"
+        ],
+        "endings": [
+          "and attracts dangerous attention",
+          "and demands an immediate decision",
+          "and raises more questions than answers",
+          "and forces them to test their beliefs"
+        ]
+      },
+      "stakes": {
+        "subjects": [
+          "Every new answer",
+          "A mistake in the calculations",
+          "An attempt to hide the discovery",
+          "An unexpected result"
+        ],
+        "predicates": [
+          "changes what the future might hold",
+          "makes the experiment more dangerous",
+          "puts loved ones at risk",
+          "reveals another mystery"
+        ],
+        "endings": [
+          "and leaves less time to think",
+          "and forces them to seek another solution",
+          "and shows the price of new knowledge",
+          "and sharpens the debate over its use"
+        ]
+      }
     },
     "Comedy": {
-      "premises": [
-        "An awkward accident brings together people who would usually avoid one another.",
-        "A message sent to the wrong person upends several people's plans.",
-        "An attempt to make a good impression causes unexpected confusion.",
-        "The characters take on a simple task that is not simple at all.",
-        "A small lie leads to an increasingly funny string of explanations.",
-        "A chance encounter makes the characters rethink their plans for the day.",
-        "A failed arrangement unexpectedly brings very different people together.",
-        "An ordinary celebration goes off course and reveals the guests' personalities."
-      ],
-      "stakes": [
-        "Each attempt to fix things creates another misunderstanding.",
-        "To get out of the situation, they will eventually have to tell the truth.",
-        "The more seriously they take the problem, the funnier the consequences become.",
-        "The simplest answer is too obvious for anyone to notice at first.",
-        "Preserving a friendship matters more than proving a point.",
-        "Their plans unravel just as they begin to trust them.",
-        "An unlikely alliance gives them a different view of the problem.",
-        "Their relationships change faster than they realize."
-      ]
+      "premises": {
+        "subjects": [
+          "A message sent to the wrong person",
+          "An awkward encounter",
+          "A rushed agreement",
+          "A joke that goes wrong"
+        ],
+        "predicates": [
+          "starts a chain of misunderstandings",
+          "brings very different people together",
+          "upends familiar plans",
+          "turns a simple task into a mix-up"
+        ],
+        "endings": [
+          "and forces the characters to improvise",
+          "and reveals unexpected sides of them",
+          "and complicates every attempt to explain",
+          "and leads to even funnier consequences"
+        ]
+      },
+      "stakes": {
+        "subjects": [
+          "Every attempt to explain",
+          "Another coincidence",
+          "A small lie",
+          "An embarrassing mix-up"
+        ],
+        "predicates": [
+          "tangles the situation further",
+          "brings strangers closer",
+          "makes the secret harder to keep",
+          "turns the characters' plans upside down"
+        ],
+        "endings": [
+          "and forces them to improvise again",
+          "and creates a reason to meet once more",
+          "and pushes them toward an honest talk",
+          "and turns a setback into an opportunity"
+        ]
+      }
     },
     "Drama": {
-      "premises": [
-        "An old promise brings difficult memories back to the surface.",
-        "Unexpected news changes the relationship between people who have known each other for years.",
-        "A return home forces the characters to look at the past differently.",
-        "One meeting calls supposedly final decisions into question.",
-        "The characters try to remain close after an event that changed their lives.",
-        "A new stage of life makes them learn how to speak to one another again.",
-        "A long-standing conflict resurfaces at the worst possible time.",
-        "An ordinary conversation becomes a test of trust between loved ones."
-      ],
-      "stakes": [
-        "Silence gradually becomes as painful as the truth.",
-        "To move forward, they must acknowledge their own mistakes.",
-        "Each conversation reveals another side of the old conflict.",
-        "Trying to protect loved ones may only push them farther away.",
-        "The right choice is harder when no one can stay uninvolved.",
-        "Past decisions continue to shape their relationships.",
-        "They must learn to listen without expecting easy answers.",
-        "Reconciliation demands more than they initially expected."
-      ]
+      "premises": {
+        "subjects": [
+          "An unexpected return",
+          "An old family argument",
+          "A difficult confession",
+          "A chance meeting"
+        ],
+        "predicates": [
+          "brings loved ones into conflict again",
+          "draws an old hurt into the open",
+          "disturbs a fragile balance",
+          "makes the characters reconsider their relationships"
+        ],
+        "endings": [
+          "and demands a difficult conversation",
+          "and brings them back to an earlier choice",
+          "and reveals the cost of silence",
+          "and opens a path toward reconciliation"
+        ]
+      },
+      "stakes": {
+        "subjects": [
+          "Every pause in the conversation",
+          "An unspoken truth",
+          "An attempt to make things right",
+          "Someone else's decision"
+        ],
+        "predicates": [
+          "pushes the characters further apart",
+          "changes the meaning of earlier actions",
+          "makes trust even more fragile",
+          "recalls a loss from the past"
+        ],
+        "endings": [
+          "and puts their relationships at risk",
+          "and makes them search for new words",
+          "and leads toward an important confession",
+          "and makes reconciliation possible"
+        ]
+      }
     },
     "Horror": {
-      "premises": [
-        "Unexplained events begin to disturb a familiar place.",
-        "A strange discovery suggests that ordinary rules no longer apply.",
-        "A nighttime visit turns a safe space into a source of fear.",
-        "The characters stumble upon a secret others refuse to discuss.",
-        "Small unsettling details slowly form a frightening pattern.",
-        "An attempt to identify strange sounds leads to an even deeper fear.",
-        "An unfamiliar place seems to change whenever the characters are alone.",
-        "A chance witness warns of a danger that is hard to believe."
-      ],
-      "stakes": [
-        "Each new night makes them less certain of their safety.",
-        "To escape, they must accept that the threat is real.",
-        "Silence becomes more disturbing than any warning.",
-        "Searching for answers may lead them straight to the source of danger.",
-        "The closer they come to the truth, the fewer safe places remain.",
-        "Distrust between them makes everything more frightening.",
-        "Even familiar faces no longer provide comfort.",
-        "They must act before fear takes away their resolve."
-      ]
+      "premises": {
+        "subjects": [
+          "A strange sound behind the wall",
+          "The disappearance of a person",
+          "An unexplained event",
+          "A half-forgotten legend"
+        ],
+        "predicates": [
+          "disturbs the characters' peace",
+          "reveals a secret buried in an old place",
+          "makes them doubt what is real",
+          "turns a familiar home into a trap"
+        ],
+        "endings": [
+          "and leaves fewer ways to escape",
+          "and makes them fear the dark",
+          "and returns night after night",
+          "and keeps the cause hidden"
+        ]
+      },
+      "stakes": {
+        "subjects": [
+          "Every passing night",
+          "Another attempt to leave",
+          "A disturbing discovery",
+          "An unseen presence"
+        ],
+        "predicates": [
+          "deepens the sense of dread",
+          "reveals another frightening detail",
+          "makes their shelter less secure",
+          "shakes the characters' confidence"
+        ],
+        "endings": [
+          "and brings an encounter with the unknown closer",
+          "and forces them to trust their instincts",
+          "and sends them looking for answers before dawn",
+          "and makes earlier mistakes impossible to forget"
+        ]
+      }
     },
     "Thriller": {
-      "premises": [
-        "An overheard conversation draws the characters into a dangerous game.",
-        "The disappearance of an important object makes them question those around them.",
-        "A hidden connection changes the meaning of familiar events.",
-        "After a mysterious warning, the characters begin searching for the truth alone.",
-        "A small mistake reveals the plans of someone they trusted.",
-        "New information puts them at risk before they can verify it.",
-        "An attempt to hide the truth leads to a series of risky decisions.",
-        "An ordinary errand gradually exposes someone else's dangerous secret."
-      ],
-      "stakes": [
-        "Any mistake could reveal their plans to an opponent.",
-        "They must decide whom to trust without seeing the whole picture.",
-        "There is barely enough time to test each theory.",
-        "An unseen opponent always seems one step ahead.",
-        "The closer they get to the truth, the less useful caution becomes.",
-        "One wrong choice could put everyone involved at risk.",
-        "Other people's secrets make allies hard to distinguish from enemies.",
-        "Keeping control becomes harder as the pressure grows."
-      ]
+      "premises": {
+        "subjects": [
+          "An anonymous warning",
+          "The disappearance of a witness",
+          "A suspicious deal",
+          "A recording found by chance"
+        ],
+        "predicates": [
+          "draws the characters into a dangerous game",
+          "casts doubt on their allies' words",
+          "reveals a carefully hidden plan",
+          "turns an ordinary day into a chase"
+        ],
+        "endings": [
+          "and leaves no time to check the facts",
+          "and makes them doubt one another",
+          "and points toward someone from the past",
+          "and makes every next step riskier"
+        ]
+      },
+      "stakes": {
+        "subjects": [
+          "Every new clue",
+          "A wrong move",
+          "An attempt to contact an ally",
+          "A conclusion reached too soon"
+        ],
+        "predicates": [
+          "raises the tension",
+          "reveals part of a dangerous scheme",
+          "puts the characters under watch",
+          "makes trust a greater risk"
+        ],
+        "endings": [
+          "and brings the opponent closer",
+          "and forces a change of plan",
+          "and makes it harder to know whom to trust",
+          "and moves the final encounter nearer"
+        ]
+      }
     },
     "Detective": {
-      "premises": [
-        "A small detail in a strange case makes the obvious answer look doubtful.",
-        "A familiar person's disappearance leaves too many conflicting clues.",
-        "A newly discovered recording opens another explanation for an old event.",
-        "An ordinary-looking case contains clues left in plain sight.",
-        "The characters take on a mystery everyone else considers solved.",
-        "An unexpected witness changes the course of the investigation.",
-        "A series of small inconsistencies adds up to a larger mystery.",
-        "One forgotten fact forces the characters to reconsider every earlier conclusion."
-      ],
-      "stakes": [
-        "Each new clue clarifies one detail while complicating another.",
-        "To get closer to an answer, they must question their own assumptions.",
-        "A wrong conclusion could send the investigation far from the truth.",
-        "Someone clearly wants important details to remain unnoticed.",
-        "The witnesses remember the same events differently.",
-        "A seemingly simple answer hides a more complicated story.",
-        "They need to understand not only what happened, but why.",
-        "The nearer the answer, the harder facts are to separate from guesses."
-      ]
+      "premises": {
+        "subjects": [
+          "A missing document",
+          "A strange witness account",
+          "A mysterious discovery",
+          "A conflicting alibi"
+        ],
+        "predicates": [
+          "opens a case with unexpected connections",
+          "casts doubt on the first suspect",
+          "points toward a hidden motive",
+          "takes the investigation beyond familiar ground"
+        ],
+        "endings": [
+          "and changes the list of suspects",
+          "and draws attention back to an old clue",
+          "and links events that once seemed unrelated",
+          "and calls for a new explanation"
+        ]
+      },
+      "stakes": {
+        "subjects": [
+          "Every checked detail",
+          "A new account of events",
+          "An attempt to rebuild the timeline",
+          "A conversation with a witness"
+        ],
+        "predicates": [
+          "raises another question",
+          "brings the solution closer",
+          "changes the meaning of known clues",
+          "undermines an earlier theory"
+        ],
+        "endings": [
+          "and sends the investigators back to the start",
+          "and makes the witnesses worth another look",
+          "and suggests an unexpected motive",
+          "and brings the real culprit closer"
+        ]
+      }
     }
   }
 }
