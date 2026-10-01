@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "locale": "en",
+  "pattern": "The {adjective} {noun}",
+  "genres": {
+    "Action": {
+      "adjectives": ["Final", "Dangerous", "Hidden", "Midnight", "Secret", "Broken", "Last", "Silent"],
+      "nouns": ["Frontier", "Route", "Order", "Flight", "Strike", "Escape", "Trace", "Mission"]
+    },
+    "Sci-Fi": {
+      "adjectives": ["Distant", "Unknown", "Zero", "Stellar", "Hidden", "New", "Lost", "Final"],
+      "nouns": ["Horizon", "Signal", "Contact", "Portal", "Experiment", "World", "Code", "Satellite"]
+    },
+    "Comedy": {
+      "adjectives": ["Accidental", "Awkward", "Unexpected", "Perfect", "Secret", "Lucky", "Unplanned", "Impossible"],
+      "nouns": ["Plan", "Guest", "Neighbor", "Weekend", "Surprise", "Romance", "Recipe", "Toast"]
+    },
+    "Drama": {
+      "adjectives": ["Quiet", "Late", "Old", "Unspoken", "Last", "Forgotten", "Fragile", "Borrowed"],
+      "nouns": ["Conversation", "Choice", "Evening", "Voice", "Portrait", "Day", "Letter", "Memory"]
+    },
+    "Horror": {
+      "adjectives": ["Dark", "Empty", "Abandoned", "Midnight", "Strange", "Silent", "Hidden", "Haunted"],
+      "nouns": ["House", "Hallway", "Basement", "Forest", "Call", "Whisper", "Visitor", "Threshold"]
+    },
+    "Thriller": {
+      "adjectives": ["False", "Last", "Secret", "Dangerous", "Hidden", "Midnight", "Unknown", "Reverse"],
+      "nouns": ["Trace", "Signal", "Witness", "Route", "Plan", "Order", "Call", "Choice"]
+    },
+    "Detective": {
+      "adjectives": ["False", "Forgotten", "Secret", "Last", "Hidden", "Midnight", "Found", "Unknown"],
+      "nouns": ["Clue", "Witness", "Key", "Archive", "Portrait", "Address", "Diary", "Call"]
+    }
+  }
+}

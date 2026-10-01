@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "locale": "en",
+  "openings": [
+    "A sudden event changes the characters' plans in {title}.",
+    "An unexpected encounter disrupts ordinary life in {title}.",
+    "The story of {title} begins with a difficult choice.",
+    "In {title}, a group of people faces a new challenge.",
+    "{title} follows the consequences of one surprising decision.",
+    "The characters' settled lives begin to shift in {title}.",
+    "{title} opens with a question that has no easy answer.",
+    "In {title}, a chance event sets a chain of changes in motion."
+  ],
+  "closings": [
+    "As events unfold, the characters must decide what matters most to them.",
+    "The further the story goes, the harder it becomes to return to old routines.",
+    "Each character's choices gradually change the course of events.",
+    "Different views of the same events lead to unexpected decisions.",
+    "Small decisions have consequences no one initially expected.",
+    "Behind the events lies a story about trust and responsibility.",
+    "The characters must decide what to protect and what to let go.",
+    "By the end of the journey, their first assumptions no longer seem certain."
+  ],
+  "genres": {
+    "Action": {
+      "premises": [
+        "After a risky assignment, the characters discover that danger is closer than expected.",
+        "An unexpected attack forces the characters to abandon their plans and work together.",
+        "When an important meeting goes wrong, they must find a way out on their own.",
+        "A chance discovery draws the characters into a struggle with a powerful opponent.",
+        "After an ally disappears, the characters set out in search of answers.",
+        "A simple errand turns into a dangerous pursuit.",
+        "A new threat forces the characters to move faster than they are used to.",
+        "One mistake exposes an opponent's plan and leaves the characters with a choice."
+      ],
+      "stakes": [
+        "Every delay gives the opposition time to make another move.",
+        "To escape the trap, the characters must learn to trust one another.",
+        "The cost of a wrong move keeps rising.",
+        "The direct route proves more dangerous than a detour.",
+        "They must protect people close to them while searching for the truth.",
+        "Their opponent knows their weaknesses and uses that advantage.",
+        "Even a successful plan can create a new danger.",
+        "Victory depends on changing tactics as much as finding courage."
+      ]
+    },
+    "Sci-Fi": {
+      "premises": [
+        "An unusual discovery challenges everything the characters thought they knew.",
+        "A mysterious signal brings them face to face with an unexplained phenomenon.",
+        "A new experiment promises change, but its consequences are unknown.",
+        "A chance encounter reveals a side of reality they never imagined.",
+        "A scientific finding raises a question no one is prepared to answer.",
+        "The characters discover a technology capable of changing ordinary life.",
+        "An unfamiliar place tests both their knowledge and resolve.",
+        "An ordinary observation becomes evidence of the impossible."
+      ],
+      "stakes": [
+        "The more they learn, the harder it is to predict the results of their choices.",
+        "Time to test their ideas is running out.",
+        "The new possibility attracts people willing to use it for harm.",
+        "They must distinguish a genuine opportunity from a dangerous illusion.",
+        "Every answer raises further questions about the future.",
+        "Correcting a mistake may prove harder than making the discovery.",
+        "The familiar rules no longer help them decide what to do.",
+        "Their choices determine who will control the new knowledge."
+      ]
+    },
+    "Comedy": {
+      "premises": [
+        "An awkward accident brings together people who would usually avoid one another.",
+        "A message sent to the wrong person upends several people's plans.",
+        "An attempt to make a good impression causes unexpected confusion.",
+        "The characters take on a simple task that is not simple at all.",
+        "A small lie leads to an increasingly funny string of explanations.",
+        "A chance encounter makes the characters rethink their plans for the day.",
+        "A failed arrangement unexpectedly brings very different people together.",
+        "An ordinary celebration goes off course and reveals the guests' personalities."
+      ],
+      "stakes": [
+        "Each attempt to fix things creates another misunderstanding.",
+        "To get out of the situation, they will eventually have to tell the truth.",
+        "The more seriously they take the problem, the funnier the consequences become.",
+        "The simplest answer is too obvious for anyone to notice at first.",
+        "Preserving a friendship matters more than proving a point.",
+        "Their plans unravel just as they begin to trust them.",
+        "An unlikely alliance gives them a different view of the problem.",
+        "Their relationships change faster than they realize."
+      ]
+    },
+    "Drama": {
+      "premises": [
+        "An old promise brings difficult memories back to the surface.",
+        "Unexpected news changes the relationship between people who have known each other for years.",
+        "A return home forces the characters to look at the past differently.",
+        "One meeting calls supposedly final decisions into question.",
+        "The characters try to remain close after an event that changed their lives.",
+        "A new stage of life makes them learn how to speak to one another again.",
+        "A long-standing conflict resurfaces at the worst possible time.",
+        "An ordinary conversation becomes a test of trust between loved ones."
+      ],
+      "stakes": [
+        "Silence gradually becomes as painful as the truth.",
+        "To move forward, they must acknowledge their own mistakes.",
+        "Each conversation reveals another side of the old conflict.",
+        "Trying to protect loved ones may only push them farther away.",
+        "The right choice is harder when no one can stay uninvolved.",
+        "Past decisions continue to shape their relationships.",
+        "They must learn to listen without expecting easy answers.",
+        "Reconciliation demands more than they initially expected."
+      ]
+    },
+    "Horror": {
+      "premises": [
+        "Unexplained events begin to disturb a familiar place.",
+        "A strange discovery suggests that ordinary rules no longer apply.",
+        "A nighttime visit turns a safe space into a source of fear.",
+        "The characters stumble upon a secret others refuse to discuss.",
+        "Small unsettling details slowly form a frightening pattern.",
+        "An attempt to identify strange sounds leads to an even deeper fear.",
+        "An unfamiliar place seems to change whenever the characters are alone.",
+        "A chance witness warns of a danger that is hard to believe."
+      ],
+      "stakes": [
+        "Each new night makes them less certain of their safety.",
+        "To escape, they must accept that the threat is real.",
+        "Silence becomes more disturbing than any warning.",
+        "Searching for answers may lead them straight to the source of danger.",
+        "The closer they come to the truth, the fewer safe places remain.",
+        "Distrust between them makes everything more frightening.",
+        "Even familiar faces no longer provide comfort.",
+        "They must act before fear takes away their resolve."
+      ]
+    },
+    "Thriller": {
+      "premises": [
+        "An overheard conversation draws the characters into a dangerous game.",
+        "The disappearance of an important object makes them question those around them.",
+        "A hidden connection changes the meaning of familiar events.",
+        "After a mysterious warning, the characters begin searching for the truth alone.",
+        "A small mistake reveals the plans of someone they trusted.",
+        "New information puts them at risk before they can verify it.",
+        "An attempt to hide the truth leads to a series of risky decisions.",
+        "An ordinary errand gradually exposes someone else's dangerous secret."
+      ],
+      "stakes": [
+        "Any mistake could reveal their plans to an opponent.",
+        "They must decide whom to trust without seeing the whole picture.",
+        "There is barely enough time to test each theory.",
+        "An unseen opponent always seems one step ahead.",
+        "The closer they get to the truth, the less useful caution becomes.",
+        "One wrong choice could put everyone involved at risk.",
+        "Other people's secrets make allies hard to distinguish from enemies.",
+        "Keeping control becomes harder as the pressure grows."
+      ]
+    },
+    "Detective": {
+      "premises": [
+        "A small detail in a strange case makes the obvious answer look doubtful.",
+        "A familiar person's disappearance leaves too many conflicting clues.",
+        "A newly discovered recording opens another explanation for an old event.",
+        "An ordinary-looking case contains clues left in plain sight.",
+        "The characters take on a mystery everyone else considers solved.",
+        "An unexpected witness changes the course of the investigation.",
+        "A series of small inconsistencies adds up to a larger mystery.",
+        "One forgotten fact forces the characters to reconsider every earlier conclusion."
+      ],
+      "stakes": [
+        "Each new clue clarifies one detail while complicating another.",
+        "To get closer to an answer, they must question their own assumptions.",
+        "A wrong conclusion could send the investigation far from the truth.",
+        "Someone clearly wants important details to remain unnoticed.",
+        "The witnesses remember the same events differently.",
+        "A seemingly simple answer hides a more complicated story.",
+        "They need to understand not only what happened, but why.",
+        "The nearer the answer, the harder facts are to separate from guesses."
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Фильмы</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/translations.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="page-heading"><h1 data-i18n="movies">Фильмы</h1><span data-i18n="subtitle">Генератор каталога</span></header>
+    <form class="toolbar" data-i18n-aria="parameters" aria-label="Параметры генерации" onsubmit="return false">
+      <label class="field"><span data-i18n="locale">Язык / регион</span>
+        <select id="locale"><option data-i18n="english" value="en-US">English (USA)</option><option data-i18n="russian" value="ru-RU" selected>Русский (Россия)</option></select>
+      </label>
+      <label class="field seed-field"><span data-i18n="seed">Сид</span>
+        <input id="seed" type="text" inputmode="numeric" value="58933423" maxlength="20" required aria-describedby="status" autocomplete="off" spellcheck="false">
+      </label>
+      <label class="likes-field" for="likes"><span><span data-i18n="likes">Лайки</span> <output id="likes-value" for="likes">4</output></span>
+        <input id="likes" type="range" min="0" max="10" step="0.1" value="4" data-i18n-aria="avgLikes" aria-label="Среднее число лайков">
+      </label>
+      <label class="field"><span data-i18n="reviews">Ревью</span>
+        <input id="reviews" type="number" min="0" max="10" step="0.1" value="2.3" required data-i18n-aria="avgReviews" aria-label="Среднее число ревью">
+      </label>
+      <label class="field"><span data-i18n="view">Вид</span>
+        <select id="view"><option data-i18n="table" value="table">Таблица</option><option data-i18n="gallery" value="gallery">Галерея</option></select>
+      </label>
+    </form>
+    <div class="table-wrap">
+      <table data-i18n-aria="generatedMovies" aria-label="Сгенерированные фильмы">
+        <thead><tr><th class="number" data-i18n="number">№</th><th class="genre" data-i18n="genre">Жанр</th><th class="title" data-i18n="title">Название</th><th data-i18n="actors">Актёры</th><th class="year" data-i18n="year">Год</th></tr></thead>
+        <tbody id="movies"></tbody>
+      </table>
+    </div>
+    <section id="gallery" class="gallery" data-i18n-aria="movieGallery" aria-label="Галерея фильмов" hidden></section>
+    <nav id="pagination" class="pagination" data-i18n-aria="pages" aria-label="Страницы каталога">
+      <button data-i18n="previous" id="previous" type="button" disabled>← Назад</button>
+      <span id="page-number" aria-live="polite">Страница 1</span>
+      <button data-i18n="next" id="next" type="button">Далее →</button>
+    </nav>
+    <p id="status" role="status" aria-live="polite"></p>
+    <div id="sentinel" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
