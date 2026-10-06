@@ -26,7 +26,6 @@ function randomSeed() {
   return ((BigInt(words[0]) << 32n) | BigInt(words[1])).toString();
 }
 
-// Keep explicit seeds (including zero) as strings to preserve all 64 bits.
 const initialSeed = new URLSearchParams(window.location.search).get('seed');
 seed.value = initialSeed ?? '';
 
@@ -103,7 +102,6 @@ async function expand(row, movie) {
   try {
     const data = await jsonRequest('/api/movies/movie', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: controller.signal,
-      // The seed stays a string in list requests, preserving all 64 bits.
       body: JSON.stringify({ movie, locale: locale.value, avgLikes: Number(likes.value), avgReviews: Number(reviews.value) })
     });
     if (controller.signal.aborted) return;
@@ -125,7 +123,6 @@ function renderDetails(cell, movie, data) {
   video.preload = 'metadata';
   video.playsInline = true;
   video.setAttribute('aria-label', `${t('trailer')}: ${movie.title}`);
-  // Use the known same-origin endpoint, never an arbitrary URL from generated data.
   video.src = `/api/movies/${movie.movieSeed}/trailer`;
   video.addEventListener('error', () => {
     video.replaceWith(element('p', 'error', t('trailerError')));

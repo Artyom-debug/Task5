@@ -41,15 +41,6 @@ public sealed class TrailerGenerator
         var language = locale.Trim().Replace('_', '-').Split('-')[0].ToLowerInvariant();
         var directorLabel = _configuration[$"Trailer:DirectorLabels:{language}"];
 
-        if (string.IsNullOrWhiteSpace(ffmpegPath) ||
-            string.IsNullOrWhiteSpace(videosDirectory) ||
-            string.IsNullOrWhiteSpace(soundDirectory) ||
-            string.IsNullOrWhiteSpace(tempDirectory) ||
-            string.IsNullOrWhiteSpace(titleFontPath) ||
-            string.IsNullOrWhiteSpace(creditsFontPath) ||
-            string.IsNullOrWhiteSpace(directorLabel))
-            throw new InvalidOperationException("Trailer paths, fonts, or director label are not configured.");
-
         var ffprobePath = Path.Combine(Path.GetDirectoryName(ffmpegPath)!, OperatingSystem.IsWindows() ? "ffprobe.exe" : "ffprobe");
 
         if (!File.Exists(ffmpegPath))
@@ -64,12 +55,12 @@ public sealed class TrailerGenerator
         if (!File.Exists(creditsFontPath))
             throw new FileNotFoundException("Credits font not found", creditsFontPath);
 
-        var videos = GetAssetFiles(videosDirectory, ".mp4");
+        var videos = GetAssetFiles(videosDirectory!, ".mp4");
         var musicFolder = _configuration[$"Trailer:GenreMusicFolders:{genre.Trim()}"];
         var musicDirectory = string.IsNullOrWhiteSpace(musicFolder)
             ? soundDirectory
-            : Path.Combine(soundDirectory, musicFolder);
-        var musicFiles = GetAssetFiles(musicDirectory, ".mp3");
+            : Path.Combine(soundDirectory!, musicFolder);
+        var musicFiles = GetAssetFiles(musicDirectory!, ".mp3");
 
         if (videos.Length < MinFragments || musicFiles.Length == 0)
             throw new InvalidOperationException("Trailer generation needs at least 3 MP4 files and 1 MP3 file.");
@@ -129,7 +120,7 @@ public sealed class TrailerGenerator
 
         var filter = BuildVideoFilter(fragmentDurations, genre) + ";" + BuildAudioFilter(selectedVideos.Length, trailerSeconds);
 
-        var fullTempDirectory = Path.GetFullPath(tempDirectory);
+        var fullTempDirectory = Path.GetFullPath(tempDirectory!);
         var workDirectory = Path.Combine(fullTempDirectory, Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(workDirectory);
         var fullOutputPath = Path.Combine(workDirectory, "trailer.mp4");
@@ -142,7 +133,7 @@ public sealed class TrailerGenerator
             File.Copy(creditsFontPath, Path.Combine(fontsWorkDirectory, Path.GetFileName(creditsFontPath)));
             await File.WriteAllTextAsync(
                 Path.Combine(workDirectory, "credits.ass"),
-                BuildCreditsAss(movie.Title, movie.Director, directorLabel),
+                BuildCreditsAss(movie.Title, movie.Director, directorLabel!),
                 new UTF8Encoding(encoderShouldEmitUTF8Identifier: false),
                 cancellationToken);
 

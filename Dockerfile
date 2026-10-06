@@ -2,6 +2,9 @@
 
 # Этот этап используется при запуске из VS в быстром режиме (по умолчанию для конфигурации отладки)
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg fontconfig \
+    && rm -rf /var/lib/apt/lists/*
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
@@ -27,4 +30,5 @@ RUN dotnet publish "./Task5.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:U
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY Assets/ /app/Assets/
 ENTRYPOINT ["dotnet", "Task5.dll"]
