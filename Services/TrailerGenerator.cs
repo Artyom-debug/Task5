@@ -13,6 +13,9 @@ public sealed class TrailerGenerator
     private const int MinFragmentSeconds = 1;
     private const int MaxFragmentSeconds = 3;
     private const double EndMarginSeconds = 0.1;
+    private const int OutputWidth = 640;
+    private const int OutputHeight = 360;
+    private const int OutputFps = 20;
 
     private readonly IConfiguration _configuration;
 
@@ -146,10 +149,14 @@ public sealed class TrailerGenerator
                 CreateNoWindow = true
             };
 
-            var arguments = new List<string> { "-y", "-nostdin", "-loglevel", "error" };
+            var arguments = new List<string>
+            {
+                "-y", "-nostdin", "-loglevel", "error",
+                "-filter_complex_threads", "1"
+            };
 
             for (var i = 0; i < selectedVideos.Length; i++)
-                arguments.AddRange(["-ss", startPositions[i], "-i", selectedVideos[i]]);
+                arguments.AddRange(["-threads:v", "1", "-ss", startPositions[i], "-i", selectedVideos[i]]);
 
             arguments.AddRange(
             [
@@ -158,8 +165,10 @@ public sealed class TrailerGenerator
                 "-map", "[video]", "-map", "[audio]",
                 "-t", trailerSeconds.ToString(CultureInfo.InvariantCulture),
                 "-c:v", "libx264", "-pix_fmt", "yuv420p",
-                "-preset", "veryfast", "-crf", "23",
-                "-c:a", "aac", "-b:a", "128k",
+                "-preset", "veryfast", "-crf", "30",
+                "-maxrate", "450k", "-bufsize", "900k",
+                "-threads:v", "1",
+                "-c:a", "aac", "-b:a", "64k",
                 "-movflags", "+faststart",
                 fullOutputPath
             ]);
@@ -250,8 +259,8 @@ public sealed class TrailerGenerator
         for (var i = 0; i < fragmentDurations.Count; i++)
         {
             filter.Append($"[{i}:v]trim=duration={fragmentDurations[i]},setpts=PTS-STARTPTS,");
-            filter.Append("scale=1280:720:force_original_aspect_ratio=increase,");
-            filter.Append($"crop=1280:720,setsar=1,fps=25[v{i}];");
+            filter.Append($"scale={OutputWidth}:{OutputHeight}:force_original_aspect_ratio=increase,");
+            filter.Append($"crop={OutputWidth}:{OutputHeight},setsar=1,fps={OutputFps}[v{i}];");
         }
 
         for (var i = 0; i < fragmentDurations.Count; i++)
@@ -274,6 +283,7 @@ public sealed class TrailerGenerator
         var titleSize = longestTitleLine > 24 ? 60 : 76;
         var directorSize = safeDirector.Length > 28 ? 42 : 52;
 
+        // ASS uses a virtual 1280x720 canvas and scales the credits to the output video.
         return $$"""
             [Script Info]
             ScriptType: v4.00+
@@ -285,7 +295,7 @@ public sealed class TrailerGenerator
             [V4+ Styles]
             Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
             Style: Title,Noto Serif Display SemiBold,{{titleSize}},&H00F7F3E9,&H00F7F3E9,&H70000000,&H00000000,0,0,0,0,100,100,2,0,1,2,2,5,60,60,40,1
-            Style: CreditLabel,Noto Sans Medium,26,&H00DBD7CF,&H00DBD7CF,&H70000000,&H00000000,0,0,0,0,100,100,3,0,1,1,1,5,60,60,40,1
+            Style: CreditLabel,Noto Sans Medium,36,&H00DBD7CF,&H00DBD7CF,&H70000000,&H00000000,0,0,0,0,100,100,3,0,1,1,1,5,60,60,40,1
             Style: Director,Noto Sans Medium,{{directorSize}},&H00F7F3E9,&H00F7F3E9,&H70000000,&H00000000,0,0,0,0,100,100,1,0,1,2,2,5,60,60,40,1
 
             [Events]
